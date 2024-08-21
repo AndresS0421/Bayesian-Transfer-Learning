@@ -16,10 +16,11 @@ source("cross_validators_env.R")
 dataset_files_list <- c("TPE_1_2021_2022", "TPE_2_2021_2022", "TPE_3_2021_2022", 
                         "TPE_1_2022_2023", "TPE_2_2022_2023", "TPE_3_2022_2023"
                       )
-dataset_files_list_index <- 3
 dataset_folder <- "Dataset_Files"
 sumary_results_file <- "summary_GENERAL"
 results_folder <- "Transfer_Method"
+# Select dataset file index ------------------------------------------------------
+dataset_files_list_index <- 1
 # Get only dataset file name -----------------------------------------------------
 dataset_file_name <- dataset_files_list[dataset_files_list_index]
 # Get TPE ------------------------------------------------------------------------
@@ -349,7 +350,7 @@ for (t in 1:length(testing_proportions_list)) {
           Sumary_all = rbind(Sumary_all, Sumary)
           
           Predictions_i = data.frame(
-            Dataset = dataset_file,
+            Dataset = dataset_file_name,
             Trait = Trait,
             Env = Pheno_India$Env[Tst_final],
             Fold = i,
