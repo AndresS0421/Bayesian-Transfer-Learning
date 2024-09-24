@@ -13,7 +13,7 @@ head(results_dataset)
 dim(results_dataset)
 
 data_sets <- results_dataset$Dataset
-data_sets
+data_sets <- unique(data_sets)
 
 
 # delete all the previous plots
@@ -28,32 +28,32 @@ results_trait_long <- data.frame(
   Trait = rep(results_trait$Trait, 2),
   Testing_Proportion = rep(results_trait$Testing_Proportion, 2),
   Method = rep(c("Conventional", "Transfer"), each = nrow(results_trait)),
-  NRMSE_AVE = c(results_trait$NRMSE_BayI_Ave, results_trait$NRMSE_Trans_Ave),
+  NRMSE = c(results_trait$NRMSE_BayI_Ave, results_trait$NRMSE_Trans_Ave),
   NRMSE_SD = c(results_trait$NRMSE_BayI_SD, results_trait$NRMSE_Trans_SD),
-  COR_AVE = c(results_trait$COR_BayI_Ave, results_trait$COR_Trans_Ave),
+  COR = c(results_trait$COR_BayI_Ave, results_trait$COR_Trans_Ave),
   COR_SD = c(results_trait$COR_BayNI_SD, results_trait$COR_Trans_SD),
-  PM_10_AVE = c(results_trait$PM_Conv_Ave_10, results_trait$PM_Transf_Ave_10),
+  PM_10 = c(results_trait$PM_Conv_Ave_10, results_trait$PM_Transf_Ave_10),
   PM_10_SD = c(results_trait$PM_Conv_SD_10, results_trait$PM_Transf_SD_10),
-  PM_20_AVE = c(results_trait$PM_Conv_Ave_20, results_trait$PM_Transf_Ave_20),
+  PM_20 = c(results_trait$PM_Conv_Ave_20, results_trait$PM_Transf_Ave_20),
   PM_20_SD = c(results_trait$PM_Conv_SD_20, results_trait$PM_Transf_SD_20),
-  PM_30_AVE = c(results_trait$PM_Conv_Ave_30, results_trait$PM_Transf_Ave_30),
+  PM_30 = c(results_trait$PM_Conv_Ave_30, results_trait$PM_Transf_Ave_30),
   PM_30_SD = c(results_trait$PM_Conv_SD_30, results_trait$PM_Transf_SD_30)
 )
 
 results_dataset_long <- data.frame(
   Dataset = rep(results_dataset$Dataset, 2),
   Trait = rep("Overall", nrow(results_dataset) * 2),
-  Testing_Proportion = rep("Average", nrow(results_dataset) * 2),
+  Testing_Proportion = rep(results_dataset$Testing_Proportion, 2),
   Method = rep(c("Conventional", "Transfer"), each = nrow(results_dataset)),
-  NRMSE_AVE = c(results_dataset$NRMSE_BayI_Ave, results_dataset$NRMSE_Trans_Ave),
+  NRMSE = c(results_dataset$NRMSE_BayI_Ave, results_dataset$NRMSE_Trans_Ave),
   NRMSE_SD = c(results_dataset$NRMSE_BayI_SD, results_dataset$NRMSE_Trans_SD),
-  COR_AVE = c(results_dataset$COR_BayI_Ave, results_dataset$COR_Trans_Ave),
+  COR = c(results_dataset$COR_BayI_Ave, results_dataset$COR_Trans_Ave),
   COR_SD = c(results_dataset$COR_BayNI_SD, results_dataset$COR_Trans_SD),
-  PM_10_AVE = c(results_dataset$PM_Conv_Ave_10, results_dataset$PM_Transf_Ave_10),
+  PM_10 = c(results_dataset$PM_Conv_Ave_10, results_dataset$PM_Transf_Ave_10),
   PM_10_SD = c(results_dataset$PM_Conv_SD_10, results_dataset$PM_Transf_SD_10),
-  PM_20_AVE = c(results_dataset$PM_Conv_Ave_20, results_dataset$PM_Transf_Ave_20),
+  PM_20 = c(results_dataset$PM_Conv_Ave_20, results_dataset$PM_Transf_Ave_20),
   PM_20_SD = c(results_dataset$PM_Conv_SD_20, results_dataset$PM_Transf_SD_20),
-  PM_30_AVE = c(results_dataset$PM_Conv_Ave_30, results_dataset$PM_Transf_Ave_30),
+  PM_30 = c(results_dataset$PM_Conv_Ave_30, results_dataset$PM_Transf_Ave_30),
   PM_30_SD = c(results_dataset$PM_Conv_SD_30, results_dataset$PM_Transf_SD_30)
 )
 
@@ -71,7 +71,9 @@ for (data_set in data_sets) {
   dir.create(file.path(plots_dir, data_set))  
   ### Graph ALL Data -------------------------------------------------------------
   results_long_colnames <- colnames(results_trait_long)
-  for (col_data in results_long_colnames[5:length(results_long_colnames)]) {
+  for (col_data_index in seq(5, length(results_long_colnames), by = 2)) {
+    col_data <- results_long_colnames[col_data_index]
+    col_data_sd <- results_long_colnames[col_data_index + 1]
     cat("Column: ", col_data, "\n")
     
     for (results_index in 1:length(results_to_graph)) {
@@ -86,7 +88,9 @@ for (data_set in data_sets) {
         facet_wrap(~Trait) +
         geom_errorbar(
           aes(
-            ymin = !!sym(col_data), ymax = !!sym(col_data)),
+            ymin = !!sym(col_data) - !!sym(col_data_sd), 
+            ymax = !!sym(col_data) + !!sym(col_data_sd)
+          ),
           width = 0.2,
           position = position_dodge(0.9),
           colour = "black"
@@ -98,7 +102,7 @@ for (data_set in data_sets) {
         axis.title = element_text(size = 14, face = "bold")
       ) +
         theme_bw() +
-        theme(text = element_text(size = 18))
+        theme(text = element_text(size = 20))
       Plot <- vertical_x(Plot, angle = 90)
       
       ### Create Graph File ----------------------------------------------------------
