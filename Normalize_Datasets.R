@@ -1,11 +1,11 @@
 library(dplyr)
 
-results <- read.csv("Transfer_Method/summary_GENERAL_ALL_V2.csv")
+results <- read.csv("Transfer_Method/summary_GENERAL_ALL.csv")
 head(results)
 dim(results)
 
 averages_by_dataset <- results %>%
-  group_by(Dataset) %>%
+  group_by(Dataset, Testing_Proportion) %>%
   summarise(
     COR_BayI_Ave = mean(COR_BayI_Ave, na.rm = TRUE),
     COR_BayNI_SD = mean(COR_BayNI_SD, na.rm = TRUE),
