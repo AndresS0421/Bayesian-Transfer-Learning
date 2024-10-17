@@ -1,12 +1,6 @@
 rm(list = ls())
 
 library(SKM)
-#library(foreach)
-#library(doParallel)
-#library(plyr)
-#library(tidyr)
-#library(dplyr)
-#library(reshape2)
 library(dplyr)
 library(BGLR)
 
@@ -145,16 +139,14 @@ for (t in 1:length(testing_proportions_list)) {
     Geno <- Geno[geno_lines, geno_lines]
     Predictions_Traits=data.frame()
     Summary_Traits=data.frame()
+    ### Loops basing on Traits
     for (t in 1:length(Traits_to_evaluate)){
-      #  t=1
       Trait_t=Traits_to_evaluate[t]
       ### Response variable in Obregon
       y <- Pheno_Proxy[,Trait_t]
       y_f <- y
       
       for(i in seq_along(folds)) {
-        #i=1
-        
         #########Training with the whole Obregon data set####################
         ZL <- data.frame()
         Lines_proxy <- data.frame()
@@ -285,8 +277,6 @@ for (t in 1:length(testing_proportions_list)) {
         Predicted_TransfA=Predicted_s
         
         #############Metrics computation
-        
-        #U_Pred=data.frame(Line=Pheno$Line[fold$testing],Pred=g_Pred_testing1, Observed=g_True_testing1)
         Data_Conv=data.frame(Line=Pheno_goal$Line[Tst_final],Observed=ObservedA, Predicted=PredictedA)
         
         #####Metrics hole testing
@@ -296,7 +286,6 @@ for (t in 1:length(testing_proportions_list)) {
         
         
         ###########Percentage of metrics####
-        
         PM_Conv_10=best_lines_match(Data=Data_Conv,proportion = 0.1) 
         PM_Conv_10
         PM_Conv_20=best_lines_match(Data=Data_Conv,proportion = 0.2) 
@@ -312,7 +301,6 @@ for (t in 1:length(testing_proportions_list)) {
         NRMSE_BayI_T=nrmse(ObservedA,Predicted_TransfA, type="mean")
         
         ###########Percentage of metrics####
-        
         PM_Transf_10=best_lines_match(Data=Data_Trans,proportion = 0.1) 
         PM_Transf_10
         PM_Transf_20=best_lines_match(Data=Data_Trans,proportion = 0.2) 
