@@ -39,8 +39,18 @@ In this R project, we proved that it's possible to use Transfer Learning in orde
 
 ## How To Execute The Model
 
-Run only the file
-    Bayesian_Transfer_Learning_With_Covariate.R
+Run only the file Bayesian_Transfer_Learning_With_Covariate.R
+
+### Select the dataset
+#### Array of datasets, where index goes from 1 - 13
+    datasets_list <- c(
+                    "EYT_1", "EYT_2", "EYT_3", "Groundnut", "Indica", # NOT RESOLVED JAPONICA
+                    "Japonica", "Maize", "Wheat_1", "Wheat_2", "Wheat_3",
+                    "Wheat_4", "Wheat_5", "Wheat_6"
+                  )
+#### Select index on line 19
+    datasets_list_index <- 5 #### CHANGE THIS VALUE TO CHANGE DATASET FILE
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
