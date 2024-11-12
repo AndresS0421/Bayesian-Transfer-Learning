@@ -55,3 +55,20 @@ results_avg_metrics_table <- results_metrics_table %>%
   )
 # Write on a csv file
 write.csv(results_avg_metrics_table, file.path("Transfer_Method", "appendix_average.csv"))
+
+# Obtain each table basing on dataset --------------------------------------------
+datasets_list <- c(
+  "EYT_1", "EYT_2", "EYT_3", "Groundnut", "Indica", # NOT RESOLVED JAPONICA
+  "Maize", "Wheat_1", "Wheat_2", "Wheat_3",
+  "Wheat_4", "Wheat_5", "Wheat_6"
+)
+
+for (i in 1:length(datasets_list)) {
+  results_dataset_metrics_table <- data.frame()
+  
+  dataset_name <- datasets_list[i]
+  results_dataset_metrics_table <- results_metrics_table[results_metrics_table$Dataset == dataset_name, ][-1]
+  row.names(results_dataset_metrics_table) <- NULL
+  
+  write.csv(results_dataset_metrics_table, file.path("Transfer_Method", dataset_name, paste0("appendix_summary_", dataset_name, ".csv")))
+}

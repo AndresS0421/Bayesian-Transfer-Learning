@@ -1,0 +1,103 @@
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/EYT_3.RData")
+Pheno
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Japonica.RData")
+Pheno
+Geno
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/EYT_3.RData")
+head(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Indica.RData")
+head(Pheno)
+Geno
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Indica.RData")
+Geno
+head(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Japonica.RData")
+Geno
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Maize.RData")
+Geno
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Indica.RData")
+Pheno
+Geno
+head(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Maize.RData")
+head(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Indica.RData")
+head(Pheno)
+colnames(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Maize.RData")
+colnames(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/EYT_1.RData")
+colnames(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_1.RData")
+colnames(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_2.RData")
+colnames(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_3.RData")
+colnames(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_4.RData")
+colnames(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_5.RData")
+colnames(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_6.RData")
+colnames(Pheno)
+dim(Geno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Indica.RData")
+dim(Geno)
+Geno
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Indica.RData")
+Geno
+dim(Geno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Japonica.RData")
+dim(Geno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_1.RData")
+dim(Geno)
+Geno
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_1.RData")
+Geno
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_2.RData")
+dim(Geno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_3.RData")
+dim(geno)
+dim(Geno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/EYT_1.RData")
+dim(Geno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_1.RData")
+Pheno
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Indica.RData")
+Pheno
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_1.RData")
+Wheat
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Indica.RData")
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_1.RData")
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/EYT_1.RData")
+Line
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/EYT_2.RData")
+Pheno_Proxy
+Pheno
+head(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_2.RData")
+head(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_1.RData")
+Pheno
+head(dat_ls$Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_2.RData")
+head(dat_ls$Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_5.RData")
+head(dat_ls$Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Japonica.RData")
+dim(Pheno)
+head(Pheno)
+dim(Geno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Indica.RData")
+dim(Pheno)
+dim(Geno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/EYT_1.RData")
+colnames(Pheno_Proxy)
+colnames(Pheno)
+head(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/EYT_1.RData")
+Geno
+head(Pheno)
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/Wheat_1.RData")
+load("/Users/aesc/Documents/Investigaciones/Transfer Learning/Bayesian_Transfer_Learning_With_Covariate/Dataset_Files/EYT_1.RData")
+head(Pheno)
