@@ -40,7 +40,7 @@ results_trait_long <- data.frame(
   Dataset = rep(results_trait$Dataset, 2),
   Trait = rep(results_trait$Trait, 2),
   Testing_Proportion = rep(results_trait$Testing_Proportion, 2),
-  Method = rep(c("GBLUP", "Transfer"), each = nrow(results_trait)),
+  Method = rep(c("GBLUP", "TL"), each = nrow(results_trait)),
   NRMSE = c(results_trait$NRMSE_BayI_Ave, results_trait$NRMSE_Trans_Ave),
   NRMSE_SD = c(results_trait$NRMSE_BayI_SD, results_trait$NRMSE_Trans_SD),
   COR = c(results_trait$COR_BayI_Ave, results_trait$COR_Trans_Ave),
@@ -57,7 +57,7 @@ results_dataset_long <- data.frame(
   Dataset = rep(results_dataset$Dataset, 2),
   Trait = rep("Overall", nrow(results_dataset) * 2),
   Testing_Proportion = rep(results_dataset$Testing_Proportion, 2),
-  Method = rep(c("GBLUP", "Transfer"), each = nrow(results_dataset)),
+  Method = rep(c("GBLUP", "TL"), each = nrow(results_dataset)),
   NRMSE = c(results_dataset$NRMSE_BayI_Ave, results_dataset$NRMSE_Trans_Ave),
   NRMSE_SD = c(results_dataset$NRMSE_BayI_SD, results_dataset$NRMSE_Trans_SD),
   COR = c(results_dataset$COR_BayI_Ave, results_dataset$COR_Trans_Ave),
@@ -74,7 +74,7 @@ results_avg_long <- data.frame(
   Dataset = rep("Overall", nrow(results_avg) * 2),
   Trait = rep("Overall", nrow(results_avg) * 2),
   Testing_Proportion = rep(results_avg$Testing_Proportion, 2),
-  Method = rep(c("GBLUP", "Transfer"), each = nrow(results_avg)),
+  Method = rep(c("GBLUP", "TL"), each = nrow(results_avg)),
   NRMSE = c(results_avg$NRMSE_BayI_Ave, results_avg$NRMSE_Trans_Ave),
   NRMSE_SD = c(results_avg$NRMSE_BayI_SD, results_avg$NRMSE_Trans_SD),
   COR = c(results_avg$COR_BayI_Ave, results_avg$COR_Trans_Ave),
@@ -130,11 +130,11 @@ for (data_set in data_sets) {
         labs(fill = "Proportions")  # Cambia la etiqueta de la leyenda
       plot <- white_theme(plot)
       Plot <- plot + theme(
-        axis.text = element_text(size = 14),
-        axis.title = element_text(size = 14, face = "bold")
+        axis.text = element_text(size = 30),
+        axis.title = element_text(size = 30, face = "bold")
       ) +
         theme_bw() +
-        theme(text = element_text(size = 20))
+        theme(text = element_text(size = 30))
       Plot <- vertical_x(Plot, angle = 90)
       
       ### Create Graph File ----------------------------------------------------------
@@ -175,11 +175,11 @@ for (col_data_index in seq(5, length(results_long_colnames), by = 2)) {
       labs(fill = "Proportions")  # Cambia la etiqueta de la leyenda
     plot <- white_theme(plot)
     Plot <- plot + theme(
-      axis.text = element_text(size = 14),
-      axis.title = element_text(size = 14, face = "bold")
+      axis.text = element_text(size = 30),
+      axis.title = element_text(size = 30, face = "bold")
     ) +
       theme_bw() +
-      theme(text = element_text(size = 20))
+      theme(text = element_text(size = 30))
     Plot <- vertical_x(Plot, angle = 90)
     
     ### Create Graph File ----------------------------------------------------------
